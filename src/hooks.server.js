@@ -3,7 +3,7 @@ import { startMongo } from "$lib/api/mongo";
 import { blogSchema, userSchema } from "$lib/api/schemas";
 
 startMongo().then(() => {
-  console.log('hooks.server,js - mongoose started')
+  console.log('hooks.server,js - mongoose started test')
 })
 
 export let Blog = mongoose.models.Blog || mongoose.model('Blog', blogSchema);
