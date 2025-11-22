@@ -12,7 +12,7 @@ export async function startMongo() {
   //mongoose.connect(MONGODB_URL)
   console.log('mongo.js, try to connect')
   try {
-    await mongoose.connect(MONGODB_URL)
+    await mongoose.connect(MONGODB_URI)
     console.log('connected to mongoose')
   } catch (e) {
     console.log('Error connecting to server')
