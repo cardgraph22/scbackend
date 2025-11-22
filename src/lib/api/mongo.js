@@ -13,9 +13,9 @@ export async function startMongo() {
 
   try {
     await mongoose.connect(MONGODB_URL)
-    //console.log('connected to mongoose')
+    console.log('connected to mongoose')
   } catch (e) {
     console.log('Error connecting to server')
-    //console.log(e)
+    console.log(e)
   }
 }
