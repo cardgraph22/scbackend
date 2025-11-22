@@ -12,6 +12,9 @@ node_modules
 .DS_Store
 Thumbs.db
 
+# d57 - mongo.js is different local/vercel
+/api/mongo.js
+
 # Env
 .env
 .env.*
