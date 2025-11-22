@@ -13,7 +13,7 @@ node_modules
 Thumbs.db
 
 # d57 - mongo.js is different local/vercel
-/src/api/mongo.js
+/api/mongo.js
 
 # Env
 .env
