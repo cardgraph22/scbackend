@@ -9,27 +9,27 @@
 </script>
 
 {#if users}
-  {#each users as user, idx}
-    <div class="row">
-      <!--<div class="item">{user._id}</div>-->
-      <div class="item">{user.username}</div>
-      <!--<div class="item">{user._id}</div>-->
-      <!--<div class="item">{user.password}</div>-->
-      <div class="item">{user.imagename}</div>
-
-      <form method="POST">
-        <button>Delete</button>
-        <input type="hidden" name="userid" value={user._id}>
-      </form>
-    </div>
-  {/each}
+<div class="flex flex-col items-center">
+  <div class="overflow-x-auto">
+    <table class="table">
+      <!-- head -->
+      <thead>
+        <tr>
+          <th></th>
+          <th>User Name</th>
+          <th>Image Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each users as user, idx}
+        <tr>
+          <th>{idx+1}</th>
+          <td>{user.username}</td>
+          <td>{user.imagename}</td>
+        </tr>
+        {/each}
+      </tbody>
+    </table>
+  </div>
+</div>
 {/if}
-
-<style>
-  .row {
-    display: flex;
-  }
-  .item {
-    flex: 1 1 0;
-  }
-</style>
