@@ -14,6 +14,7 @@
         case "success":
           userState.username = result.data.username;
           userState.userid = result.data._id;
+          userState.email = result.data.email;
           break;
         case "failure":
         default:
@@ -29,12 +30,7 @@
   function addUser() {
     if (newuser === "") newuser = "newuser";
     else newuser = "newuser";
-    console.log(
-      "login page, newuser",
-      newuser,
-      "typeof newuser",
-      typeof newuser,
-    );
+    console.log("login page, newuser", newuser, "typeof newuser", typeof newuser);
   }
 </script>
 
@@ -54,7 +50,15 @@
       value={form?.username ?? ""}
       class="input input-bordered"
     />
-    {#if form?.errors?.username}
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder="Enter email"
+      value={form?.email ?? ""}
+      class="input input-bordered"
+    />
+    {#if form?.errors?.email}
       <label for="username" class="txtError">{form?.errors?.username[0]}</label>
     {/if}
     <label class="label" for="password">Password</label>

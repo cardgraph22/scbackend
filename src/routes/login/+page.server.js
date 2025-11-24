@@ -6,6 +6,7 @@ export const actions = {
     const formData = Object.fromEntries(await request.formData());
 
     let username = formData.username;
+    let email = formData.email;
     let password = formData.password;
     let newuser = formData.newuser;
 
@@ -29,6 +30,7 @@ export const actions = {
         const user = new User({
           username,
           password,
+          email,
           imagename: 'icon.png'
         })
         let newuser = await user.save();
@@ -39,6 +41,7 @@ export const actions = {
           message: 'New User added',
           _id: newuser._id.toString(),
           username,
+          email,
           newuser: newuser.imagename
         }
 

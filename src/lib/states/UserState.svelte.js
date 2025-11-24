@@ -4,6 +4,7 @@ const userState = $state(
   {
     userid: '',
     username: '',
+    email: '',
     password: '',
     image:  ''
   });
