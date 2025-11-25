@@ -7,6 +7,7 @@
     users = JSON.parse(obj)
     //$inspect('+page, listUsers, users', users)
   }
+  let yes = $state(false);
 </script>
 
 {#if users}
@@ -15,7 +16,13 @@
     <div class="p-0.5 text-gray-900 text-xl text-left">Name</div>
     <div class="p-0.5 text-gray-900 text-xl text-left">Email</div>
     <div class="p-0.5 text-gray-900 text-xl text-left">Image Name</div>
-    <div></div>
+    <div>
+      <label class="label cursor-pointer">
+        <span class="label-text p-0.5 text-gray-900 text-xl text-left">Admin?</span>
+        <!--<input type="checkbox" onchange={addUser} class="checkbox" />-->
+        <input type="checkbox"bind:checked={yes} class="checkbox"/>
+      </label>
+    </div>
     <hr class="border-gray-500">
     <hr class="border-gray-500">
     <hr class="border-gray-500">
@@ -31,7 +38,7 @@
 
       <div class="p-0.5 text-gray-700 text-left">
       <form method="POST">
-        <button class="btn btn-sm btn-error btn-outline">Delete</button>
+        <button class="btn btn-sm btn-error btn-outline" disabled={!yes}>Delete</button>
         <input type="hidden" name="userid" value={user._id}>
       </form>
       </div>
@@ -40,51 +47,3 @@
   </div>
   </div>
 {/if}
-<style>
-
-.grid-item {
-    padding: 5px;
-    color: gray;
-    text-align: left;
-    border-radius: 5px;
-}
-</style>
-<!--
-<style>
-  .row {
-    display: flex;
-  }
-  .item {
-    flex: 1 1 0;
-  }
-</style>
--->
-
-<!--
-{#if users}
-<div class="flex flex-col items-center">
-  <div class="overflow-x-auto">
-    <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>User Name</th>
-          <th>Email</th>
-          <th>Image Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each users as user, idx}
-        <tr>
-          <th>{idx+1}</th>
-          <td>{user.username}</td>
-          <td>{user.email}</td>
-          <td>{user.imagename}</td>
-        </tr>
-        {/each}
-      </tbody>
-    </table>
-  </div>
-</div>
-{/if}
--->
