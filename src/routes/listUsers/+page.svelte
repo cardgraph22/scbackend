@@ -5,7 +5,7 @@
   if(data){
     let obj = JSON.stringify(data.users)
     users = JSON.parse(obj)
-    $inspect('+page, listUsers, users', users)
+    //$inspect('+page, listUsers, users', users)
   }
 </script>
 
