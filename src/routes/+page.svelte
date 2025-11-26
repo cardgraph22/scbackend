@@ -20,6 +20,15 @@
   })
 </script>
 
+<!--
+<style>
+  img {
+    width: 100px;
+    object-fit: contain;
+  }
+</style>
+-->
+
 <h1>Svelte Club excersize 2</h1>
 
 {#if loading}

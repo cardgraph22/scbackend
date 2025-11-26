@@ -1,6 +1,5 @@
 import { User } from "/src/hooks.server";
 
-/*
 export async function load() {
   let users = await(User.find())
   //  !!! use the following for production (do not return password)
@@ -8,7 +7,6 @@ export async function load() {
   users = JSON.parse(JSON.stringify(users));
   return {users};
 }
-*/
 
 // delete user
 export const actions = {
