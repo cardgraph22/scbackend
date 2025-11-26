@@ -13,7 +13,7 @@
     <ul class="space-y-1 list-none">Home Page
       <li class="ml-6 list-disc text-gray-800">
         <p class="max-w-[800px] overflow-wrap wrap-break-word">
-          The intent here is to load images from the backend. <span class="italic">Currently, this is being done on the front-end utnil I learn the Svelte async function.   I also want to try the new remote functions.</span>
+          The intent here is to load images from the backend. <span class="italic">Currently, this is being done on the front-end until I learn the Svelte async function.   I also want to try the new remote functions.</span>
         </p>
       </li>
       <li class="ml-6 list-disc text-gray-800">
