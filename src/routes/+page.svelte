@@ -1,41 +1,12 @@
 <script>
-    import { onMount } from "svelte";
-
-  //let { data } = $props();
-  //console.log('data', data)
-
-  let mydata = null;
-  let loading = true;
-  onMount(async()=>{
-    const res = await fetch('https://dummyjson.com/products/?limit=10')
-    //const res = await fetch('https://jsonplaceholder.typicode.com/posts')
-    //console.log('res', res)
-    if(!res.ok){
-      throw new Error('Network Error');
-    }
-    mydata = await res.json()
-    //console.log('mydata', JSON.stringify(mydata))
-    loading = false;
-
-  })
+  let { data } = $props();
+    let { products } = data
 </script>
-
-<!--
-<style>
-  img {
-    width: 100px;
-    object-fit: contain;
-  }
-</style>
--->
 
 <h1>Svelte Club excersize 2</h1>
 
-{#if loading}
-  <p>Loading...</p>
-{:else}
   <div class="flex flex-wrap gap-3">
-    {#each mydata.products as prod}
+    {#each products as prod}
       <div class="flex flex-col">
         <div class="card bg-base-100 w-96 shadow-sm">
           <figure>
@@ -57,15 +28,3 @@
       </div>
     {/each}
   </div>
-{/if}
-
-<!-- The 'data' prop from load can contain promises during client-side navigation -->
-<!--
-{#await data}
-  <p>Loading specific data for this section...</p>
-{:then apiData}
-  <p>Data loaded: {JSON.stringify(apiData)}</p>
-{:catch error}
-  <p>Error: {error.message}</p>
-{/await}
--->
